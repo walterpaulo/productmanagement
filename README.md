@@ -7,11 +7,18 @@
 - Rails 6.1.4.4 [https://guides.rubyonrails.org/6_1_release_notes.html](https://guides.rubyonrails.org/6_1_release_notes.html);
 - BotStrap 5.1.3 [https://getbootstrap.com/docs/5.1/getting-started/introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction);
 
-#### System dependencies 
+### System dependencies 
 
-#### Configuration
+### Configuration
+- Download the project and enter the directory
+```
+git clone https://github.com/walterpaulo/productmanagement.git
 
-### Database creation
+cd productmanagement/
+
+```
+
+#### Database creation
 ```
 rails migrate
 ```
