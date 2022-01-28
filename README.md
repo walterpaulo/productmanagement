@@ -23,7 +23,11 @@ cd productmanagement/
 ```
 rails migrate
 ```
-### Start Project
+#### Install webpacker
+```
+bundle exec rails webpacker:install
+```
+#### Start Project
 ```
 rails server
 ```
