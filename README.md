@@ -1,17 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Prodct Management - MVC
 
-Things you may want to cover:
+#### Requerimentos/Conhecimentos e Tecnologias utilizadas
+- Ruby 2.7 [(https://www.ruby-lang.org/en/news/2019/12/25/ruby-2-7-0-released)](https://www.ruby-lang.org/en/news/2019/12/25/ruby-2-7-0-released);
+- Rails 6.1.4.4 [https://guides.rubyonrails.org/6_1_release_notes.html](https://guides.rubyonrails.org/6_1_release_notes.html);
+- BotStrap 5.1.3 [https://getbootstrap.com/docs/5.1/getting-started/introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction);
 
-* Ruby version
+#### System dependencies 
 
-* System dependencies
+#### Configuration
 
-* Configuration
-
-* Database creation
+### Database creation
+```
+rails migrate
+```
 
 * Database initialization
 
