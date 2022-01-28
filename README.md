@@ -10,6 +10,7 @@
 ### System dependencies 
 
 ### Configuration
+
 - Download the project and enter the directory
 ```
 git clone https://github.com/walterpaulo/productmanagement.git
@@ -21,6 +22,10 @@ cd productmanagement/
 #### Database creation
 ```
 rails migrate
+```
+### Start Project
+```
+rails server
 ```
 
 * Database initialization
