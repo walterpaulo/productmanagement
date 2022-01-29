@@ -17,6 +17,10 @@ git clone https://github.com/walterpaulo/productmanagement.git
 
 cd productmanagement/
 
+yarn
+
+bunble
+
 ```
 
 #### Database creation
