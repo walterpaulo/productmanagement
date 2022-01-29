@@ -18,8 +18,8 @@ export default class extends Controller {
       showDenyButton: true,
       showConfirmButton: false,
       showCancelButton: true,
-      denyButtonText: 'Sim',
-      cancelButtonText: `Cancelar`,
+      denyButtonText: 'Yes',
+      cancelButtonText: `No`,
     }).then((result) => {
       if (result.isDenied) {
         this.redirect = true
