@@ -10,28 +10,42 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">
+      <%= form.label :name %>
+    </label>
+    <div class="col-sm-10">
+      <%= form.text_field :name %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">
+      <%= form.label :quantity %>
+    </label>
+    <div class="col-sm-10">
+      <%= form.number_field :quantity %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :purchase_price %>
-    <%= form.text_field :purchase_price %>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">
+      <%= form.label :purchase_price %>
+    </label>
+    <div class="col-sm-10">
+      <%= form.text_field :purchase_price %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :sale_price %>
-    <%= form.text_field :sale_price %>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">
+      <%= form.label :sale_price %>
+    </label>
+    <div class="col-sm-10">
+      <%= form.text_field :sale_price %>
+    </div>
   </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, class: 'btn btn-primary' %>
   </div>
 <% end %>
