@@ -6,8 +6,6 @@ def index
 end
 
 def login
-    debugger
-    x=""
     if params[:email].present? && params[:password].present?
         adm = User.where(email: params[:email], password: params[:password])
         if adm.count > 0
