@@ -1,15 +1,24 @@
 class LoginController < ApplicationController
-    skip_before_action :verify_authenticity_token 
+    skip_before_action :verify_authenticity_token, :verify_login
+    layout "login"
 
 def index
-    render layout: false
 end
 
 def login
+    debugger
+    x=""
     if params[:email].present? && params[:password].present?
         adm = User.where(email: params[:email], password: params[:password])
         if adm.count > 0
-            cookies[:product_admin] = { value: adm.first.id, expires: 1.year.from_now, httponly: true }
+            admin = adm.first
+            time = params[:remember] == "1"? 1.year.from_now : 30.minutes.from_now
+            value = {
+                id: admin.id,
+                name: admin.name,
+                email: admin.email
+            }
+            cookies[:product_admin] = { value: value.to_json, expires: time, httponly: true }
             redirect_to "/"
         else
             flash[:error] = "Invalid login and password!"
