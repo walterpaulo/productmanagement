@@ -24,7 +24,11 @@
 
             <div class="text-end">
               <button type="button" class="btn btn-outline-light me-2">Login</button>
-              <button type="button" class="btn btn-warning">Sign-up</button>
+              <% @name %>
+              <%= link_to 'Logout', logout_url, method: :get, class: "btn btn-warning",
+              data: {controller: 'sweetalert',
+                     action: 'click->sweetalert#showAlert',
+                     sweetalert_title_value: 'Do you want to go out?' } %>
             </div>
           </div>
         </div>
