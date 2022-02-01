@@ -12,4 +12,17 @@ class ProductTest < ActiveSupport::TestCase
     product = Product.new
     assert_not product.save
   end
+
+  test 'update product' do
+    product_update = Product.find(1)
+    product_update.name = 'Oil'
+    product_update.save
+    assert Product.where(name: 'Oil').present?
+  end
+
+  test 'delete product' do
+    product_delete = Product.find(1)
+    product_delete.destroy
+    assert_not Product.find_by(id: 1).present?
+  end
 end
