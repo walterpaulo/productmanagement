@@ -17,7 +17,7 @@ def login
                 email: admin.email
             }
             cookies[:product_admin] = { value: value.to_json, expires: time, httponly: true }
-            redirect_to "/"
+            redirect_to "/products"
         else
             flash[:error] = "Invalid login and password!"
             redirect_to "/login"
