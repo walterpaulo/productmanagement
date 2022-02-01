@@ -36,12 +36,32 @@ bundle exec rails webpacker:install
 rails server
 ```
 
-* Database initialization
+### Testing Rails Applications [https://guides.rubyonrails.org/v6.1/testing.html](https://guides.rubyonrails.org/v6.1/testing.html)
 
-* How to run the test suite
+**Model Product** ([test/models/product_test.rb](test/models/product_test.rb))
+```
+rails test test/models/product_test.rb
+```
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* validates product creation;
 
-* ...
+* Create and validate fields;
+
+* update product;
+
+* delete product;
+
+**Model User** ([test/models/user_test.rb](test/models/user_test.rb))
+```
+rails test test/models/user_test.rb
+```
+
+
+* validates user creation;
+
+* Create and validate fields;
+
+* update user;
+
+* delete user;
