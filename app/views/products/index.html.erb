@@ -6,7 +6,10 @@
   </div>
 </div>
 </div>
-<div class="row">  
+<div class="row">
+  <% if @products.blank? %>
+    <h6>Product not found!</h6>
+  <% else %>  
     <table class = "table table-bordered table-striped">
       <thead>
         <tr>
@@ -35,14 +38,15 @@
         <% end %>
       </tbody>
     </table>
-</div>
-<div class="row align-items-center">
-  <div class="col">
-  </div>
-  <div class="col">
-    <%= will_paginate @products %>
-  </div>
-  <div class="col">
-  </div>
-</div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col">
+      </div>
+      <div class="col">
+        <%= will_paginate @products %>
+      </div>
+      <div class="col">
+      </div>
+  <% end %>   
+</div>  
 <br>
