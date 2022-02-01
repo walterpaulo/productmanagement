@@ -1,12 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   name: Caffer
   quantity: 1
   purchase_price: 10
   sale_price: 20
 
 two:
+  id: 2
   name: Cookie
   quantity: 2
   purchase_price: 2.5
