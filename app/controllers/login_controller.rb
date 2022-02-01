@@ -32,5 +32,4 @@ def logout
     cookies[:product_admin] = nil
     redirect_to "/login"
 end
-
 end
