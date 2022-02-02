@@ -180,6 +180,13 @@ GEM
       parser (>= 3.0.1.1)
     rubocop-minitest (0.17.1)
       rubocop (>= 0.90, < 2.0)
+    rubocop-performance (1.11.5)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    rubocop-rails (2.12.4)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.7.0, < 2.0)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
@@ -254,6 +261,8 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.4)
   rubocop
   rubocop-minitest
+  rubocop-performance
+  rubocop-rails
   sass-rails (>= 6)
   selenium-webdriver
   spring
