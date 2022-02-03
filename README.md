@@ -5,6 +5,7 @@
 #### Requerimentos/Conhecimentos e Tecnologias utilizadas
 - Ruby 2.7 [(https://www.ruby-lang.org/en/news/2019/12/25/ruby-2-7-0-released)](https://www.ruby-lang.org/en/news/2019/12/25/ruby-2-7-0-released);
 - Rails 6.1.4.4 [https://guides.rubyonrails.org/6_1_release_notes.html](https://guides.rubyonrails.org/6_1_release_notes.html);
+- Testing Rails [https://guides.rubyonrails.org/v6.1/testing.html](https://guides.rubyonrails.org/v6.1/testing.html);
 - BotStrap 5.1.3 [https://getbootstrap.com/docs/5.1/getting-started/introduction](https://getbootstrap.com/docs/5.1/getting-started/introduction);
 
 ### System dependencies 
@@ -66,6 +67,7 @@ rails test test/models/user_test.rb
 
 * delete user;
 
+
 **Controller Users** ([test/controllers/users_controller_test.rb](test/controllers/users_controller_test.rb))
 ```
 rails test test/controllers/users_controller_test.rb
@@ -89,6 +91,30 @@ rails test test/controllers/users_controller_test.rb
 * should get edit
 * should update product
 * should destroy product
+
+## System Tests
+Rails to test your application. You need the Chrome browser to run these tests:
+
+
+**Users** ([test/system/users_test.rb](test/system/users_test.rb))
+
+```
+rails test test/system/users_test.rb
+```
+* visiting the index
+* creating a User
+* updating a User
+* destroying a User
+
+**Products** ([test/system/products_test.rb](test/system/products_test.rb))
+
+```
+rails test test/system/products_test.rb
+```
+* visiting the index
+* creating a User
+* updating a User
+* destroying a User
 
 
 

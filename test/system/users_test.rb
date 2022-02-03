@@ -52,10 +52,14 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "destroying a User" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
+
     visit users_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    click_on "Destroy", match: :first
+    click_on "Yes"
 
     assert_text "User was successfully destroyed"
   end
