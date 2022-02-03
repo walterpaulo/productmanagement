@@ -4,7 +4,7 @@ class ProductTest < ActiveSupport::TestCase
   test 'validates product creation' do
     product = Product.new(name: 'Rice', quantity: 2, purchase_price: 5, sale_price: 22)
     assert product.save
-    product_count = Product.where(name: 'Rice')
+    product_count = Product.where(name: 'Rice').count
     assert_equal(1, product_count)
   end
 
