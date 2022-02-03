@@ -6,6 +6,7 @@ one:
   quantity: 1
   purchase_price: 10
   sale_price: 20
+  image: https://dummyimage.com/450x300/dee2e6/6c757d.jpg
 
 two:
   id: 2
@@ -13,3 +14,5 @@ two:
   quantity: 2
   purchase_price: 2.5
   sale_price: 3
+  image: https://dummyimage.com/450x300/dee2e6/6c757d.jpg
+
