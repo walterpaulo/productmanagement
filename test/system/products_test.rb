@@ -1,24 +1,36 @@
 require "application_system_test_case"
 
 class ProductsTest < ApplicationSystemTestCase
+  driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
   setup do
     @product = products(:one)
+    @user = users(:one)
   end
 
   test "visiting the index" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
     visit products_url
-    assert_selector "h1", text: "Products"
+    assert_text "New Product"
   end
 
   test "creating a Product" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
+
     visit products_url
-    click_on "New Product"
+    click_on 'New Product'
 
     fill_in "Name", with: @product.name
+    fill_in "Image", with: @product.image
     fill_in "Purchase price", with: @product.purchase_price
     fill_in "Quantity", with: @product.quantity
     fill_in "Sale price", with: @product.sale_price
-    click_on "Create Product"
+    click_on "Save"
 
     assert_text "Product was successfully created"
     click_on "Back"
