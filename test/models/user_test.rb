@@ -5,7 +5,7 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(name: 'user', email: 'user@example.com.br', password: '123123')
     assert user.save
     user_count = User.where(name: 'user')
-    assert(1, user_count)
+    assert(1, user_count)?
   end
 
   test 'Create and validate fields' do
