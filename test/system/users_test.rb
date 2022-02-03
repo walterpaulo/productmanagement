@@ -20,7 +20,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "email", with: @user.email
     fill_in "Password", with: @user.password
     click_on "Login"
-    
+
     visit users_url
     click_on "New User"
 
@@ -34,6 +34,11 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "updating a User" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
+    
     visit users_url
     click_on "Edit", match: :first
 
