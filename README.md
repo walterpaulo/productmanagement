@@ -20,14 +20,28 @@ cd productmanagement/
 
 yarn
 
-bunble
+bundle
 
 ```
 
 #### Database creation
 ```
-rails migrate
+rails db:migrate
 ```
+#### Adding User
+type it:
+```
+rails console
+```
+Add the code:
+```
+User.new(name: "admin", email:"admin@exemple.com.br", password: "admin,123").save
+```
+Get out:
+```
+exit
+```
+
 #### Install webpacker
 ```
 bundle exec rails webpacker:install
@@ -35,6 +49,10 @@ bundle exec rails webpacker:install
 #### Start Project
 ```
 rails server
+```
+Open the browser and enter code:
+```
+http://localhost:3000/login
 ```
 
 ### Testing Rails Applications [https://guides.rubyonrails.org/v6.1/testing.html](https://guides.rubyonrails.org/v6.1/testing.html)
