@@ -65,3 +65,31 @@ rails test test/models/user_test.rb
 * update user;
 
 * delete user;
+
+**Controller Users** ([test/controllers/users_controller_test.rb](test/controllers/users_controller_test.rb))
+```
+rails test test/controllers/users_controller_test.rb
+```
+* should get index
+* should get new
+* should create user
+* should show user
+* should get edit
+* should update user
+* should destroy user
+
+**Controller Products** ([test/controllers/products_controller_test.rb](test/controllers/products_controller_test.rb))
+```
+rails test test/controllers/users_controller_test.rb
+```
+* should get index
+* should get new
+* should create product
+* should show product
+* should get edit
+* should update product
+* should destroy product
+
+
+
+
