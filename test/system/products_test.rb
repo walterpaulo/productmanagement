@@ -57,10 +57,14 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "destroying a Product" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
+
     visit products_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+    click_on "Destroy", match: :first
+    click_on "Yes"
 
     assert_text "Product was successfully destroyed"
   end
