@@ -37,14 +37,20 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "updating a Product" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
+
     visit products_url
     click_on "Edit", match: :first
 
     fill_in "Name", with: @product.name
+    fill_in "Image", with: @product.image
     fill_in "Purchase price", with: @product.purchase_price
     fill_in "Quantity", with: @product.quantity
     fill_in "Sale price", with: @product.sale_price
-    click_on "Update Product"
+    click_on "Save"
 
     assert_text "Product was successfully updated"
     click_on "Back"
