@@ -1,0 +1,205 @@
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: normal, indented_internal_methods
+Layout/IndentationConsistency:
+  Exclude:
+    - 'Gemfile'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: Width, IgnoredPatterns.
+Layout/IndentationWidth:
+  Exclude:
+    - 'Guardfile'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: AllowDoxygenCommentStyle, AllowGemfileRubyComment.
+Layout/LeadingCommentSpace:
+  Exclude:
+    - 'config/application.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: AllowInHeredoc.
+Layout/TrailingWhitespace:
+  Exclude:
+    - 'Gemfile'
+
+
+# Offense count: 2
+Lint/ReturnInVoidContext:
+  Exclude:
+    - 'app/models/user.rb'
+
+# Offense count: 25
+# Configuration parameters: AllowKeywordBlockArguments.
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+# Offense count: 20
+Lint/UselessAssignment:
+  Exclude:
+    - 'app/models/application_record.rb'
+    - 'app/models/product.rb'
+    - 'app/models/user.rb'
+
+# Offense count: 1
+# Configuration parameters: CheckForMethodsWithNoSideEffects.
+Lint/Void:
+  Exclude:
+    # - 'app/models/store.rb'
+
+# Offense count: 130
+# Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
+Metrics/AbcSize:
+  Max: 123
+
+# Offense count: 30
+# Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
+# IgnoredMethods: refine
+Metrics/BlockLength:
+  Max: 2120
+
+# Offense count: 19
+# Configuration parameters: CountComments, CountAsOne.
+Metrics/ClassLength:
+  Max: 701
+
+# Offense count: 44
+# Configuration parameters: IgnoredMethods.
+Metrics/CyclomaticComplexity:
+  Max: 29
+
+# Offense count: 123
+# Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
+Metrics/MethodLength:
+  Max: 75
+
+# Offense count: 33
+# Configuration parameters: IgnoredMethods.
+Metrics/PerceivedComplexity:
+  Max: 25
+
+# Offense count: 5
+# Configuration parameters: NamePrefix, ForbiddenPrefixes, AllowedMethods, MethodDefinitionMacros.
+# NamePrefix: is_, has_, have_
+# ForbiddenPrefixes: is_, has_, have_
+# AllowedMethods: is_a?
+# MethodDefinitionMacros: define_method, define_singleton_method
+Naming/PredicateName:
+  Exclude:
+    - 'app/models/application_record.rb'
+    - 'app/models/product.rb'
+    - 'app/models/user.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Rails/ApplicationController:
+  Exclude:
+    - 'app/controllers/login_controller.rb'
+
+# Offense count: 35
+# Configuration parameters: Include.
+# Include: app/models/**/*.rb
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+# Offense count: 2
+# Configuration parameters: Include.
+# Include: app/helpers/**/*.rb
+Rails/HelperInstanceVariable:
+  Exclude:
+    - 'app/helpers/application_helper.rb'
+    - 'app/helpers/home_controller.rb'
+    - 'app/helpers/login_controller.rb'
+    - 'app/helpers/products_controller.rb'
+    - 'app/helpers/users_controller.rb'
+
+# Offense count: 61
+# Configuration parameters: Include.
+# Include: app/models/**/*.rb
+Rails/InverseOf:
+  Enabled: false
+
+# # Offense count: 2
+# # Cop supports --auto-correct.
+# Rails/PluralizationGrammar:
+#   Exclude:
+#     - 'app/controllers/api/v1/ratings_report_controller.rb'
+
+# Offense count: 33
+# Configuration parameters: ForbiddenMethods, AllowedMethods.
+# ForbiddenMethods: decrement!, decrement_counter, increment!, increment_counter, insert, insert!, insert_all, insert_all!, toggle!, touch, touch_all, update_all, update_attribute, update_column, update_columns, update_counters, upsert, upsert_all
+Rails/SkipsModelValidations:
+  Enabled: false
+
+# Offense count: 15
+# Configuration parameters: Include.
+# Include: app/models/**/*.rb
+Rails/UniqueValidationWithoutIndex:
+  Exclude:
+   - 'app/models/product.rb'
+   - 'app/models/user.rb'
+# Offense count: 1
+# Configuration parameters: Environments.
+# Environments: development, test, production
+Rails/UnknownEnv:
+  Environments: development, test
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: nested, compact
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'config/application.rb'
+    # - 'config/initializers/ext/string.rb'
+
+# Offense count: 3
+# Cop supports --auto-correct.
+Style/ExpandPathArguments:
+  Exclude:
+    - 'Rakefile'
+    # - 'cable/config.ru'
+    - 'config.ru'
+
+# Offense count: 11
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: braces, no_braces
+Style/HashAsLastArrayItem:
+  Exclude:
+    - 'app/models/product.rb'
+    - 'app/models/user.rb'
+
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
+# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
+Style/HashSyntax:
+  Exclude:
+    - 'Gemfile'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: Strict.
+Style/NumericLiterals:
+  MinDigits: 6
+
+# Offense count: 8
+# Configuration parameters: AllowedMethods.
+# AllowedMethods: respond_to_missing?
+Style/OptionalBooleanParameter:
+  Exclude:
+    - 'app/models/product.rb'
+    - 'app/models/user.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: PreferredDelimiters.
+Style/PercentLiteralDelimiters:
+  Exclude:
+    - 'config/spring.rb'
