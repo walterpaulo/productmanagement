@@ -16,6 +16,11 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "creating a User" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
+    
     visit users_url
     click_on "New User"
 
