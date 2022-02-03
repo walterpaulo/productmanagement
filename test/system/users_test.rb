@@ -6,8 +6,13 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
+    visit "/login"
+    fill_in "email", with: @user.email
+    fill_in "Password", with: @user.password
+    click_on "Login"
+
     visit users_url
-    assert_selector "h1", text: "Users"
+    assert_text "New User"
   end
 
   test "creating a User" do
