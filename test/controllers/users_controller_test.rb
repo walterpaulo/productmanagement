@@ -6,41 +6,48 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get users_url
+    cookies_admin = {"HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};"}
+    get users_url, headers: cookies_admin
     assert_response :success
   end
 
   test "should get new" do
-    get new_user_url
+    cookies_admin = {"HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};"}
+    get new_user_url, headers: cookies_admin
     assert_response :success
   end
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { email: @user.email, name: @user.name, password: @user.password } }
+      cookies_admin = {"HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};"}
+      post users_url, headers: cookies_admin, params: { user: { email: @user.email, name: @user.name, password: @user.password } }
     end
 
     assert_redirected_to user_url(User.last)
   end
 
   test "should show user" do
-    get user_url(@user)
+    cookies_admin = {"HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};"}
+    get user_url(@user), headers: cookies_admin
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_user_url(@user)
+    cookies_admin = {"HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};"}
+    get edit_user_url(@user), headers: cookies_admin
     assert_response :success
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { email: @user.email, name: @user.name, password: @user.password } }
+    cookies_admin = {"HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};"}
+    patch user_url(@user),headers: cookies_admin, params: { user: { email: @user.email, name: @user.name, password: @user.password } }
     assert_redirected_to user_url(@user)
   end
 
   test "should destroy user" do
+    cookies_admin = {"HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};"}
     assert_difference('User.count', -1) do
-      delete user_url(@user)
+      delete user_url(@user), headers: cookies_admin
     end
 
     assert_redirected_to users_url
