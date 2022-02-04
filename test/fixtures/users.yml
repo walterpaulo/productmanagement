@@ -4,10 +4,10 @@ one:
   id: 1
   name: admin
   email: admin@example.com.br
-  password_digest: 123456
+  password_digest: "$2a$12$uw23ObQqGp5mQldqzacqvuARWWUD31rZV4rjA.fbAHmbuB1UymDrK"
 
 two:
   id: 2
   name: store
   email: store@example.com.br
-  password_digest: 123456
+  password_digest: "$2a$12$uw23ObQqGp5mQldqzacqvuARWWUD31rZV4rjA.fbAHmbuB1UymDrK"
