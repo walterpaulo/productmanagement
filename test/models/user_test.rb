@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test 'validates user creation' do
-    user = User.new(name: 'user', email: 'user@example.com.br', password: '123123')
+    user = User.new(name: 'user', email: 'user@example.com.br', password_digest: '123123')
     assert user.save
     user_count = User.where(name: 'user').count
     assert_equal(1, user_count)
