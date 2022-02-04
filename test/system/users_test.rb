@@ -8,7 +8,7 @@ class UsersTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
 
     visit users_url
@@ -18,7 +18,7 @@ class UsersTest < ApplicationSystemTestCase
   test "creating a User" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
 
     visit users_url
@@ -26,7 +26,7 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Email", with: @user.email
     fill_in "Name", with: @user.name
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -36,7 +36,7 @@ class UsersTest < ApplicationSystemTestCase
   test "updating a User" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
 
     visit users_url
@@ -44,7 +44,7 @@ class UsersTest < ApplicationSystemTestCase
 
     fill_in "Email", with: @user.email
     fill_in "Name", with: @user.name
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Update User"
 
     assert_text "User was successfully updated"
@@ -54,7 +54,7 @@ class UsersTest < ApplicationSystemTestCase
   test "destroying a User" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
 
     visit users_url

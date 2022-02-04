@@ -10,7 +10,7 @@ class ProductsTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
     visit products_url
     assert_text "New Product"
@@ -19,7 +19,7 @@ class ProductsTest < ApplicationSystemTestCase
   test "creating a Product" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
 
     visit products_url
@@ -39,7 +39,7 @@ class ProductsTest < ApplicationSystemTestCase
   test "updating a Product" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
 
     visit products_url
@@ -59,7 +59,7 @@ class ProductsTest < ApplicationSystemTestCase
   test "destroying a Product" do
     visit "/login"
     fill_in "email", with: @user.email
-    fill_in "Password", with: @user.password
+    fill_in "Password", with: 123_456
     click_on "Login"
 
     visit products_url
