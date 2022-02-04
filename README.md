@@ -29,19 +29,9 @@ bundle
 rails db:migrate
 ```
 #### Adding User
-type it:
 ```
-rails console
+rake db:seed
 ```
-Add the code:
-```
-User.new(name: "admin", email:"admin@exemple.com.br", password: "admin,123").save
-```
-Get out:
-```
-exit
-```
-
 #### Install webpacker
 ```
 bundle exec rails webpacker:install
@@ -50,10 +40,15 @@ bundle exec rails webpacker:install
 ```
 rails server
 ```
-Open the browser and enter code:
-```
+Open the browser and enter code:\
 http://localhost:3000/login
-```
+\
+\
+Access:
+> Login: admin@example.com.br
+> Password: admin,123
+
+
 
 ### Testing Rails Applications [https://guides.rubyonrails.org/v6.1/testing.html](https://guides.rubyonrails.org/v6.1/testing.html)
 
