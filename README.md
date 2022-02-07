@@ -129,6 +129,10 @@ rails test test/system/products_test.rb
 * updating a User
 * destroying a User
 
+**Run All Tests**
 
+```
+rails test:all
+```
 
 
