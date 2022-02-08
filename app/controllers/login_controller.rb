@@ -6,14 +6,13 @@ class LoginController < ApplicationController
 
   def login
     if params[:email].present? && params[:password].present?
-      adm = User.where(email: params[:email]).last.authenticate(params[:password])
-      if adm.present?
-        admin = adm
+      adm = User.find_by(email: params[:email])
+      if adm && adm.authenticate(params[:password])
         time = params[:remember] == "1" ? 1.year.from_now : 30.minutes.from_now
         value = {
-          id: admin.id,
-          name: admin.name,
-          email: admin.email
+          id: adm.id,
+          name: adm.name,
+          email: adm.email
         }
         cookies[:product_admin] = { value: value.to_json, expires: time, httponly: true }
         redirect_to "/products"
