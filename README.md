@@ -105,7 +105,7 @@ rails test test/controllers/users_controller_test.rb
 * should update product
 * should destroy product
 
-## System Tests
+> ## System Tests
 Rails to test your application. You need the Chrome browser to run these tests:
 
 
@@ -129,6 +129,10 @@ rails test test/system/products_test.rb
 * updating a User
 * destroying a User
 
+> **Run All Tests**
 
+```
+rails test:all
+```
 
 
