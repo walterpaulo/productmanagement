@@ -40,7 +40,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update user" do
     cookies_admin = { "HTTP_COOKIE" => "legal_accepted=yes; product_admin={\"id\":#{@user.id},\"name\":\"#{@user.name}\",\"email\":\"#{@user.email}\"};" }
-    patch user_url(@user), headers: cookies_admin, params: { user: { email: @user.email, name: @user.name, password: @user.password_digest } }
+    patch user_url(@user), headers: cookies_admin, params: { user: { email: @user.email, name: @user.name, password: @user.password_digest, password_confirmation: @user.password_digest } }
     assert_redirected_to user_url(@user)
   end
 
