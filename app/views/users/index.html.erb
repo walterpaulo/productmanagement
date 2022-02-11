@@ -1,8 +1,7 @@
 <div class="row">
   <p id="notice"><%= notice %></p>
-  <div class="col">
+  <div class="col" style='margin-bottom:30px'>
     <%= link_to 'New User', new_user_path, class: "btn btn-primary" %>
-    <hr>
   </div>
 </div>
 <br>
@@ -38,8 +37,9 @@
       <% end %>
       </tbody>
     </table>
-    <div style="text-align:center">
-      <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+    <div style="pagination" style='margin-bottom:30px'>
+      <%= will_paginate @users %>
     </div>
   </form>
 </sb-ng-bootstrap-table>
+<br><hr>
