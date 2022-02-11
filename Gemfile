@@ -37,5 +37,5 @@ end
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 gem 'stimulus-rails'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.5'
 gem 'will_paginate', '~> 3.3'
