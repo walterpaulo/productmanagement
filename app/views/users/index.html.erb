@@ -1,6 +1,6 @@
 <div class="row">
   <%= flash_message %>
-  <div class="col" style='margin-bottom:30px'>
+  <div class="col" style='margin:30px 0 30px 0'>
     <%= link_to 'New User', new_user_path, class: "btn btn-primary" %>
   </div>
 </div>
@@ -10,7 +10,6 @@
   <form _ngcontent-uia-c214="" novalidate="" class="ng-untouched ng-pristine ng-valid">
     <div _ngcontent-uia-c214="" class="mb-3"><div _ngcontent-uia-c214="" class="input-group table-search">
       <input _ngcontent-uia-c214="" type="text" name="searchTerm" placeholder="Full user search..." class="form-control ng-untouched ng-pristine ng-valid">
-      <!---->
       </div>
     </div>
     <table _ngcontent-uia-c214="" class="table table-striped">
@@ -28,7 +27,7 @@
           <td _ngcontent-uia-c214=""><ngb-highlight _ngcontent-uia-c214="">********</ngb-highlight></td>
           <td _ngcontent-uia-c214=""><ngb-highlight _ngcontent-uia-c214=""><%= link_to 'Show', user, class: "btn btn-primary" %></ngb-highlight></td>
           <td _ngcontent-uia-c214=""><ngb-highlight _ngcontent-uia-c214=""><%= link_to 'Edit', edit_user_path(user), class: "btn btn-warning" %></ngb-highlight></td>
-          <td _ngcontent-uia-c214=""><ngb-highlight _ngcontent-uia-c214=""><%= link_to 'Destroy', user, method: :delete, class: "btn btn-danger",
+          <td _ngcontent-uia-c214=""><ngb-highlight _ngcontent-uia-c214=""><%= link_to 'Destroy', user, method: :delete, class: (user.id == id_user) ? "btn btn-danger disabled" : "btn btn-danger",
               data: {controller: 'sweetalert',
                      action: 'click->sweetalert#showAlert',
                      sweetalert_title_value: 'Are you sure?' } %></ngb-highlight>
