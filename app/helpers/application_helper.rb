@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def flash_message
     messages = ""
-    %i[notice info warning danger].each do |type|
+    %i[notice info warning danger success].each do |type|
       messages += "<div class=\"alert alert-#{type}\" role='alert'>#{flash[type]}</div>" if flash[type]
     end
     messages.html_safe
