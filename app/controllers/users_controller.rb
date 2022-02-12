@@ -21,11 +21,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to users_url, notice: "User was successfully created." }
-        format.json { render :show, status: :created, location: @user }
-      else
+    if @user.save
+      flash[:success] = "User #{@user.email} was successfully created!"
+      redirect_to users_url
+    else
+      respond_to do |format|
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -49,11 +49,11 @@ class UsersController < ApplicationController
   def destroy
     id_login = JSON.parse(cookies[:product_admin]).values.first.to_i
     if id_login == @user.id
-      flash[:danger] = "#{@user.name} paul was not excluded!"
+      flash[:warning] = "Error: user #{@user.email} logged in."
       redirect_to users_url
     else
       @user.destroy
-      flash[:danger] = "The user has not been deleted."
+      flash[:danger] = "User #{@user.email} has been deleted."
       redirect_to users_url
     end
   end
