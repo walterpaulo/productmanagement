@@ -17,7 +17,7 @@ class LoginController < ApplicationController
         cookies[:product_admin] = { value: value.to_json, expires: time, httponly: true }
         redirect_to "/products"
       else
-        flash[:error] = "Invalid login and password!"
+        flash[:error] = "Invalid login or password!"
         redirect_to "/login"
       end
     else

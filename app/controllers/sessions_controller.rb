@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
+  layout "login"
+
   def new; end
 
   def create
+    debugger
+    x=""
     email = params.as_json['session']['email']
     password = params.as_json['session']['password']
     user = User.find_by(email: email)
