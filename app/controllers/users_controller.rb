@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    id_login = JSON.parse(cookies[:product_admin]).values.first.to_i
+    id_login = current_user.id
     if id_login == @user.id
       flash[:warning] = "Error: user #{@user.email} logged in."
       redirect_to users_url
