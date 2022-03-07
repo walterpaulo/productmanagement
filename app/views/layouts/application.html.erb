@@ -24,7 +24,7 @@
 
             <div class="text-end">
                 <a href="/users/<%=  %>" class= "btn btn-outline-light me-2">Perfil</a>
-              <%= link_to 'Logout', logout_url, method: :get, class: "btn btn-warning",
+              <%= link_to 'Logout', logout_path, method: :get, class: "btn btn-warning",
               data: {controller: 'sweetalert',
                      action: 'click->sweetalert#showAlert',
                      sweetalert_title_value: 'Do you want to go out?' } %>

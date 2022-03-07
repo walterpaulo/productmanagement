@@ -23,10 +23,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # Remove the user id from the session
     session.delete(:current_user_id)
-    # Clear the memoized current user
-    @_current_user = nil
+    session.clear
     redirect_to login_url
   end
 end
