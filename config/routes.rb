@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get '/login', to: 'sessions#index'
   post '/login', to: 'sessions#create'
-  get '/logout', to: 'login#logout'
+  get '/logout', to: 'sessions#destroy'
 end
