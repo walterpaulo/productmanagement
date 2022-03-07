@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-  skip_before_action :verify_authenticity_token, :verify_login
+  skip_before_action :verify_login
   layout "login"
 
   def index; end
