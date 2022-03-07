@@ -1,19 +1,24 @@
 class SessionsController < ApplicationController
+  skip_before_action :verify_login
   layout "login"
 
   def new; end
 
   def create
-    debugger
-    x=""
     email = params.as_json['session']['email']
     password = params.as_json['session']['password']
     user = User.find_by(email: email)
-    if user.password == password
-      log_in user
-      redirect_to produts_path
+    if user.present? && email.present? && password.present?
+      if user.authenticate(password)
+        log_in user
+        redirect_to products_path
+      else
+        flash[:error] = "Invalid login or password!"
+        redirect_to login_url
+      end
     else
-      redirect_to login_url
+      flash[:error] = "Invalid login or password!"
+      redirect_to "/login"
     end
   end
 
